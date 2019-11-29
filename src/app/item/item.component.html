@@ -1,0 +1,17 @@
+<div class="container" *ngIf="item">
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{item.name}}
+                        <button class="btn btn-primary float-right" (click)="saveToFile()">Save to file</button>
+                    </h5>
+                    <pre class="card-subtitle mb-2 text-muted">
+                        {{item | json}}
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

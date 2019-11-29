@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-8">
+            <input type="text" class="form-control" [(ngModel)]="keyword" placeholder="Search" (keyup)="getVariables()">
+        </div>
+        <div class="col-4">
+            <button class="btn btn-primary btn-block" [disabled]="!variables.length" (click)="saveToFile()">Save to file</button>
+        </div>
+    </div>
+    <div class="row" *ngIf="!variables.length">
+        <div class="col-12">Loading ...</div>
+    </div>
+    <div class="row" *ngFor="let item of variables">
+        <div class="col-12">
+            <div class="card mb-2">
+                <div class="card-body">
+                    <h5 class="card-title mb-0">
+                        <a [routerLink]="['/variables/' + item.id]">
+                            {{item.name}}
+                        </a>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
